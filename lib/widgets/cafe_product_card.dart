@@ -15,7 +15,7 @@ class CafeProductsCard extends StatelessWidget {
         border: Border.all(width: 0.1, color: Colors.black),
       ),
       child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.only(top: 8, left: 16, bottom: 8, right: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,7 +27,7 @@ class CafeProductsCard extends StatelessWidget {
                 ),
                 Ink(
                   decoration: ShapeDecoration(
-                      shape: CircleBorder(side: BorderSide(width: 0.1))),
+                      shape: CircleBorder(side: BorderSide(width: 0.04))),
                   child: Center(
                     child: IconButton(
                       padding: EdgeInsets.zero,

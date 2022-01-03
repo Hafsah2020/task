@@ -29,7 +29,9 @@ class CafeScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
             ),
           ),
@@ -205,40 +207,57 @@ class CafeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                height: 30,
               ),
               ListView.separated(
                 shrinkWrap: true,
                 primary: false,
                 itemCount: CafeProducts.sample.length,
                 itemBuilder: (context, int index) {
-                  return CafeProductsCard(
-                      cafeProducts: CafeProducts.sample[index]);
-                  /*return ListTile(
-                    leading: Text(CafeProducts.sample[index].name),
-                    trailing: Row(
-                      children: [
-                        Text('\$ ${CafeProducts.sample[index].price}'),
-                        Ink(
-                          decoration: ShapeDecoration(
-                              shape:
-                                  CircleBorder(side: BorderSide(width: 0.1))),
-                          child: Center(
-                            child: IconButton(
-                              padding: EdgeInsets.zero,
-                              icon: Center(
-                                child: Icon(
-                                  Icons.arrow_forward_outlined,
-                                  color: Colors.black,
+                  /*return CafeProductsCard(
+                      cafeProducts: CafeProducts.sample[index]);*/
+                  return Card(
+                    margin:
+                        EdgeInsets.only(right: 0, left: 0, top: 0, bottom: 0),
+                    elevation: 0.2,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40)),
+                    child: ListTile(
+                      contentPadding: EdgeInsets.only(
+                          bottom: 8, left: 20, top: 8, right: 8),
+                      title: Text(CafeProducts.sample[index].name),
+                      trailing: SizedBox(
+                        width: size.width * 0.3,
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Text(
+                                    '\$ ${CafeProducts.sample[index].price}')),
+                            SizedBox(width: 2),
+                            Ink(
+                              decoration: ShapeDecoration(
+                                  color: Colors.black54,
+                                  shape: CircleBorder(
+                                      side: BorderSide(width: 0.1))),
+                              child: Center(
+                                child: IconButton(
+                                  color: Colors.white,
+                                  padding: EdgeInsets.zero,
+                                  icon: Center(
+                                    child: Icon(
+                                      Icons.arrow_forward_outlined,
+                                      //color: Colors.white,
+                                    ),
+                                  ),
+                                  onPressed: () {},
                                 ),
                               ),
-                              onPressed: () {},
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  );*/
+                  );
                 },
                 separatorBuilder: (context, int index) {
                   return SizedBox(

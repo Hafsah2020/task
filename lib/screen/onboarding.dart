@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/data/data.dart';
 import '../widgets/widgets.dart';
 import '../screen/screens.dart';
 
@@ -20,9 +21,9 @@ class OnboardingScreen extends StatelessWidget {
                     //shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Card1(),
-                      Card1(),
-                      Card1(),
+                      Card1(images: onboardImages[0]),
+                      Card1(images: onboardImages[1]),
+                      Card1(images: onboardImages[2]),
                       Container(
                         color: Colors.green,
                         constraints: BoxConstraints.expand(

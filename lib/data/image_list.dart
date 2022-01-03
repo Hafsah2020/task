@@ -8,3 +8,9 @@ class Images {
     Images('assets/pink/Capture 18.PNG')
   ];
 }
+
+var onboardImages = [
+  'assets/pink/images.jpeg',
+  'assets/pink/images (1).jpeg',
+  'assets/pink/images (2).jpeg'
+];
